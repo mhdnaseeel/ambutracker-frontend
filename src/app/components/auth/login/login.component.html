@@ -1,0 +1,70 @@
+<div class="login-container">
+  <div class="login-card">
+    <!-- Logo -->
+    <div class="logo-container">
+      <img src="assets/images/ambutrack-logo.svg" alt="AmbuTrack Logo" class="logo">
+    </div>
+
+    <!-- Welcome Message -->
+    <h1>Welcome Again!</h1>
+    <p class="subtitle">Call nearest ambulance on emergency situations!</p>
+
+    <!-- Phone Number Form -->
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+      <div class="phone-input">
+        <div class="country-code">
+          <img src="assets/images/india-flag.png" alt="India Flag" class="flag-icon">
+          <span>+91</span>
+        </div>
+        <input 
+          type="tel" 
+          formControlName="phone" 
+          placeholder="Enter Your Phone Number"
+          class="phone-number-input"
+          maxlength="10">
+      </div>
+      <button 
+        type="submit" 
+        class="login-button" 
+        [disabled]="!loginForm.valid || isLoading">
+        <span *ngIf="!isLoading">Login</span>
+        <span *ngIf="isLoading">Logging in...</span>
+      </button>
+    </form>
+
+    <!-- OTP Verification Form -->
+    <div *ngIf="showOtpScreen" class="otp-container">
+      <div class="verification-header">
+        <h2>Enter Your Verification Code</h2>
+        <p>We have sent an OTP to {{countryCode}} {{loginForm.get('phone')?.value}}</p>
+        <a href="javascript:void(0)" (click)="changeNumber()">Change Number?</a>
+      </div>
+
+      <form [formGroup]="otpForm" (ngSubmit)="onSubmit()" class="otp-form">
+        <div class="otp-input-container">
+          <input type="text" 
+                 formControlName="otp" 
+                 maxlength="4" 
+                 class="otp-input"
+                 placeholder="Enter OTP">
+        </div>
+
+        <div class="resend-container">
+          <span *ngIf="otpTimer > 0">Resend OTP after {{otpTimer}} seconds</span>
+          <a href="javascript:void(0)" 
+             *ngIf="otpTimer === 0"
+             (click)="resendOtp()"
+             class="resend-link">
+            Resend OTP
+          </a>
+        </div>
+
+        <button type="submit" 
+                class="login-button" 
+                [disabled]="!otpForm.valid">
+          Login
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

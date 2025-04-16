@@ -1,0 +1,32 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [mode]="'side'"
+      [opened]="true">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item *ngFor="let item of menuItems" [routerLink]="item.path" routerLinkActive="active">
+        <mat-icon matListItemIcon>{{item.icon}}</mat-icon>
+        <span matListItemTitle>{{item.label}}</span>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <span>Emergency Response System</span>
+      <span class="toolbar-spacer"></span>
+      <button mat-icon-button>
+        <mat-icon>account_circle</mat-icon>
+      </button>
+    </mat-toolbar>
+    <div class="content">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>Welcome to the Dashboard</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>Select an option from the menu to get started.</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

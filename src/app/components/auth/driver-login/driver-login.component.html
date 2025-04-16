@@ -1,0 +1,35 @@
+<div class="driver-login-container">
+  <div class="login-card">
+    <!-- Ambulance Illustration -->
+    <div class="illustration-container">
+      <img src="assets/images/ambulance-illustration.svg" alt="Ambulance" class="illustration">
+    </div>
+
+    <!-- Welcome Message -->
+    <h1>Hey Gorgeous!</h1>
+    <p class="quote">"Speed does not always kill. And not only that, sometimes speed saves a life."</p>
+
+    <!-- Phone Number Form -->
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+      <div class="phone-input">
+        <div class="country-code">
+          <img src="assets/images/india-flag.png" alt="India Flag" class="flag-icon">
+          <span>{{countryCode}}</span>
+        </div>
+        <input 
+          type="tel" 
+          formControlName="phone" 
+          placeholder="Enter Your Phone Number"
+          class="phone-number-input"
+          maxlength="10">
+      </div>
+      <button 
+        type="submit" 
+        class="login-button" 
+        [disabled]="!loginForm.valid || isLoading">
+        <span *ngIf="!isLoading">Login</span>
+        <span *ngIf="isLoading">Logging in...</span>
+      </button>
+    </form>
+  </div>
+</div>

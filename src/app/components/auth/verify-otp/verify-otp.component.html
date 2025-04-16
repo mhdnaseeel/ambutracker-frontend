@@ -1,0 +1,45 @@
+<div class="login-container">
+  <div class="login-card">
+    <!-- Verification Illustration -->
+    <div class="illustration-container">
+      <img src="assets/images/otp-verification.png" alt="OTP Verification" class="illustration">
+    </div>
+
+    <!-- Verification Header -->
+    <h1>Enter Your Verification Code</h1>
+    <p class="subtitle">We have sent an OTP to +91 {{phone}}</p>
+    <a href="javascript:void(0)" (click)="changeNumber()" class="change-number">Change Number?</a>
+
+    <!-- OTP Form -->
+    <form [formGroup]="otpForm" (ngSubmit)="onSubmit()" class="otp-form">
+      <div class="otp-input-container">
+        <input 
+          type="text" 
+          formControlName="otp" 
+          maxlength="4" 
+          class="otp-input"
+          placeholder="• • • •">
+      </div>
+
+      <div class="resend-container">
+        <ng-container *ngIf="otpTimer > 0">
+          <span>Resend OTP after {{otpTimer}} seconds</span>
+        </ng-container>
+        <a 
+          href="javascript:void(0)" 
+          *ngIf="otpTimer === 0"
+          (click)="resendOtp()"
+          class="resend-link">
+          Resend OTP
+        </a>
+      </div>
+
+      <button 
+        type="submit" 
+        class="login-button" 
+        [disabled]="!otpForm.valid || isLoading">
+        Login
+      </button>
+    </form>
+  </div>
+</div> 

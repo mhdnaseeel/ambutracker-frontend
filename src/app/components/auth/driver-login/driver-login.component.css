@@ -1,0 +1,155 @@
+.driver-login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #c41e3a;
+  padding: 20px;
+}
+
+.login-card {
+  background: white;
+  border-radius: 12px;
+  padding: 40px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.illustration-container {
+  margin-bottom: 32px;
+}
+
+.illustration {
+  width: 240px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.illustration:hover {
+  transform: translateY(-5px);
+}
+
+h1 {
+  color: #c41e3a;
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.quote {
+  color: #666;
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 40px;
+  font-style: italic;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.phone-input {
+  display: flex;
+  align-items: center;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 4px;
+  background: white;
+  transition: border-color 0.3s;
+}
+
+.phone-input:focus-within {
+  border-color: #c41e3a;
+}
+
+.country-code {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  border-right: 1px solid #e0e0e0;
+}
+
+.flag-icon {
+  width: 24px;
+  height: 16px;
+  margin-right: 8px;
+}
+
+.country-code span {
+  color: #333;
+  font-size: 16px;
+}
+
+.phone-number-input {
+  flex: 1;
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  outline: none;
+  color: #333;
+  background: none;
+}
+
+.phone-number-input::placeholder {
+  color: #999;
+}
+
+.login-button {
+  width: 100%;
+  padding: 14px;
+  background-color: #c41e3a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.login-button:hover:not(:disabled) {
+  background-color: #b01b34;
+  transform: translateY(-1px);
+}
+
+.login-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.login-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+.login-button:disabled span {
+  animation: fadeInOut 1.5s infinite ease-in-out;
+}
+
+@media (max-width: 480px) {
+  .login-card {
+    padding: 30px 20px;
+  }
+
+  .illustration {
+    width: 200px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  .quote {
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,117 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #fff1f1;
+  padding: 20px;
+}
+
+.login-card {
+  background: white;
+  border-radius: 12px;
+  padding: 40px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.illustration-container {
+  margin-bottom: 32px;
+}
+
+.illustration {
+  width: 200px;
+  height: auto;
+}
+
+h1 {
+  color: #333;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  color: #666;
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.change-number {
+  color: #c41e3a;
+  text-decoration: none;
+  font-size: 14px;
+  display: inline-block;
+  margin-bottom: 32px;
+}
+
+.change-number:hover {
+  text-decoration: underline;
+}
+
+.otp-input-container {
+  margin-bottom: 24px;
+}
+
+.otp-input {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 24px;
+  text-align: center;
+  letter-spacing: 12px;
+  color: #333;
+  background: #fff;
+  outline: none;
+}
+
+.otp-input::placeholder {
+  letter-spacing: 6px;
+  color: #999;
+}
+
+.resend-container {
+  margin-bottom: 24px;
+  color: #666;
+  font-size: 14px;
+}
+
+.resend-link {
+  color: #c41e3a;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.resend-link:hover {
+  text-decoration: underline;
+}
+
+.login-button {
+  width: 100%;
+  padding: 14px;
+  background-color: #c41e3a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.1s;
+}
+
+.login-button:hover:not(:disabled) {
+  background-color: #b01b34;
+  transform: translateY(-1px);
+}
+
+.login-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.login-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+} 
